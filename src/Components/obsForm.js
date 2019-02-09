@@ -5,7 +5,7 @@ class ObsForm extends React.Component {
     super();
     this.state = {
       birdname: "",
-      birdrarity: "",
+      birdrarity: "Common", // because prechecked
       notes: ""
     };
   }
@@ -17,8 +17,8 @@ class ObsForm extends React.Component {
   };
 
   handleSubmit = e => {
-	e.preventDefault();
-	const date = Date()
+    e.preventDefault();
+    const date = Date();
     this.props.addobservation({
       birdname: this.state.birdname,
       birdrarity: this.state.birdrarity,
@@ -28,6 +28,7 @@ class ObsForm extends React.Component {
     this.props.history.push("/");
   };
   // change forms rarity to radiobutton
+  // add confirmation window
 
   render() {
     return (
@@ -47,11 +48,27 @@ class ObsForm extends React.Component {
           <p>
             <label>Rarity</label>
             <input
-              type="text"
+              defaultChecked
+              type="radio"
               name="birdrarity"
-              value={this.state.birdrarity}
+              value="Common"
               onChange={this.handleChange}
-            />
+            />{" "}
+            Common
+            <input
+              type="radio"
+              name="birdrarity"
+              value="Rare"
+              onChange={this.handleChange}
+            />{" "}
+            Rare
+            <input
+              type="radio"
+              name="birdrarity"
+              value="Extremely Rare"
+              onChange={this.handleChange}
+            />{" "}
+            Extremely Rare
           </p>
           <p>
             <label>Notes</label>
