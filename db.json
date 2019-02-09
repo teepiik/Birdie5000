@@ -13,6 +13,13 @@
       "date": "timestamp (add right format)",
       "birdrarity": "common",
       "notes": "crow"
+    },
+    {
+      "birdname": "bird",
+      "birdrarity": "common",
+      "date": "Sat Feb 09 2019 15:02:13 GMT+0200 (Eastern European Standard Time)",
+      "notes": "test",
+      "id": 3
     }
   ]
 }

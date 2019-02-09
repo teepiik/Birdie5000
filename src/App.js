@@ -64,10 +64,11 @@ class App extends Component {
 							<div>
 								{' '}
 								<Link to={`/createobservation`}>Add new observation</Link>
+								<Link to={`/`}>Frontpage</Link>
 							</div>
 						</header>
 						<Route exact path="/" render={() => <ObsListing observations={this.state.observations} />} />
-						<Route exact path="/createobservation" render={({ history }) => <ObsForm history={history} addObservation={this.addObservation} />}/>
+						<Route exact path="/createobservation" render={({ history }) => <ObsForm history={history} addobservation={this.addObservation} />}/>
 					</div>
 				</Router>
 			</div>
