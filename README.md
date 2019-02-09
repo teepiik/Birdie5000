@@ -1,10 +1,11 @@
 # Birdie5000
-Application for adding bird observation. React practice exercise.
+React practice exercise
+---
+Application for adding bird observation. Users can add own observations. Observation include name, rarity, notes and time of the observation (when recorded). User can also view observations on frontpage and order them by name, rarity or time of the observation.
 
-(In directory Birdie5000)
-Start JSON server on port 3001 (terminal 1)
-npx json-server --port=3001 --watch db.json
+## How to use
+0. You need Javascript, Node.js and JSON server.
 
-(Terminal 2)
-Start App
-npm start
+1. Start JSON server on port 3001 by typing on terminal "npx json-server --port=3001 --watch db.json"
+
+2. Start application in separate terminal. First install depencies 'npm install'. Then start app with cmd 'npm start'
