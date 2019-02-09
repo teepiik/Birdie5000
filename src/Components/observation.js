@@ -4,8 +4,11 @@ const Observation = ({ observation }) => {
   return (
     <div>
       <li className="Observation">
-        <h2> {observation.birdname} </h2> <p> {observation.birdrarity} </p>
-        <p> {observation.notes} </p> <p> {observation.date} </p>
+        <h2 className="Observation">{observation.birdname} </h2>
+        <p className="Observation">Rarity: {observation.birdrarity} </p>
+        <p className="Observation">Time: {observation.date} </p>
+        <p className="Observation">Notes: {observation.notes} </p>
+        
       </li>
     </div>
   );

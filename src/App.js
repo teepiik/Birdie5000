@@ -21,7 +21,8 @@ class App extends Component {
     const getObs = await observationService.getAll();
     this.setState({
       observations: getObs
-    });
+	});
+	this.orderByDate()
   };
 
   addObservation = async observation => {
@@ -54,6 +55,18 @@ class App extends Component {
   handleFieldChanges = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
+  // newest comes first
+  orderByDate = event => {
+    let byDateOrder = this.state.observations.sort((a,b) => {
+		return new Date(a.date).getTime -
+		new Date(b.date).getTime
+	}).reverse()
+	this.setState({observations: byDateOrder})
+  };
+  
+
+
   // add filtering, change ul mapping
   render() {
     return (

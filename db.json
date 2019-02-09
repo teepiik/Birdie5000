@@ -1,20 +1,6 @@
 {
   "observations": [
     {
-      "id": 1,
-      "birdname": "Seagul",
-      "date": "timestamp (add right format)",
-      "birdrarity": "common",
-      "notes": "seagul"
-    },
-    {
-      "id": 2,
-      "birdname": "Hooded Crow",
-      "date": "timestamp (add right format)",
-      "birdrarity": "common",
-      "notes": "crow"
-    },
-    {
       "birdname": "bird",
       "birdrarity": "common",
       "date": "Sat Feb 09 2019 15:02:13 GMT+0200 (Eastern European Standard Time)",
@@ -48,6 +34,13 @@
       "date": "Sat Feb 09 2019 18:12:49 GMT+0200 (Eastern European Standard Time)",
       "notes": "test",
       "id": 7
+    },
+    {
+      "birdname": "Newest",
+      "birdrarity": "Extremely Rare",
+      "date": "Sat Feb 09 2019 20:05:54 GMT+0200 (Eastern European Standard Time)",
+      "notes": "test",
+      "id": 8
     }
   ]
 }
