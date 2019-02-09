@@ -2,7 +2,7 @@ import React, { Component } from "react";
 //import logo from './logo.svg'; add img from src
 import "./App.css";
 import observationService from "./Services/observationService";
-import Menubar from './Components/Menu'
+import Menubar from "./Components/Menu";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ObsListing from "./Components/obsListing";
 import ObsForm from "./Components/obsForm";
@@ -13,7 +13,10 @@ class App extends Component {
     super();
     this.state = {
       observations: [],
-      message: ""
+      message: "",
+      orderByDate: true,
+      orderByAlph: false,
+      orderByRarity: false
     };
   }
 
@@ -21,8 +24,8 @@ class App extends Component {
     const getObs = await observationService.getAll();
     this.setState({
       observations: getObs
-	});
-	this.orderByDate()
+    });
+    this.orderByDate();
   };
 
   addObservation = async observation => {
@@ -58,22 +61,38 @@ class App extends Component {
 
   // newest comes first
   orderByDate = event => {
-    let byDateOrder = this.state.observations.sort((a,b) => {
-		return new Date(a.date).getTime -
-		new Date(b.date).getTime
-	}).reverse()
-	this.setState({observations: byDateOrder})
+    let byDateOrder = this.state.observations
+      .sort((a, b) => {
+        return new Date(a.date).getTime - new Date(b.date).getTime;
+      })
+      .reverse();
+    this.setState({
+      observations: byDateOrder,
+      orderByDate: true,
+      orderByAlph: false,
+      orderByRarity: false
+    });
   };
-  
 
+  // sort alphabetically
+  orderByName = event => {
+    let byAlphabeticalOrder = this.state.observations
+      .sort((a, b) => {
+        if (a.birdname.toUpperCase() < b.birdname.toUpperCase()) return -1;
+        else if (a.birdname.toUpperCase() > b.birdname.toUpperCase()) return 1;
+        return 0;
+      })
+    this.setState({
+      observations: byAlphabeticalOrder
+    });
+  };
 
-  // add filtering, change ul mapping
   render() {
     return (
       <div>
         <Router>
           <div className="container">
-			<Menubar />
+            <Menubar orderByDate={this.orderByDate} orderByName={this.orderByName} />
             <Route
               exact
               path="/"
