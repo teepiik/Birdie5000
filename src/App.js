@@ -66,7 +66,7 @@ class App extends Component {
 								<Link to={`/createobservation`}>Add new observation</Link>
 							</div>
 						</header>
-						<Route exact path="/" render={() => <ObsListing observation={this.state.observations} />} />
+						<Route exact path="/" render={() => <ObsListing observations={this.state.observations} />} />
 						<Route exact path="/createobservation" render={({ history }) => <ObsForm history={history} addObservation={this.addObservation} />}/>
 					</div>
 				</Router>
