@@ -6,7 +6,7 @@ import Menubar from "./Components/Menu";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ObsListing from "./Components/obsListing";
 import ObsForm from "./Components/obsForm";
-// import notification
+import Notification from "./Components/Notification";
 
 class App extends Component {
   constructor() {
@@ -32,7 +32,7 @@ class App extends Component {
     const addedObs = await observationService.create(observation);
     this.setState({
       observations: this.state.observations.concat(addedObs),
-      message: `you created: ${addedObs.birdname}`
+      message: `you added observation of : ${addedObs.birdname}`
     });
     setTimeout(() => {
       this.setState({ message: "" });
@@ -144,6 +144,7 @@ class App extends Component {
               orderByRarity={this.orderByRarity}
               state={this.state}
             />
+            <Notification message={this.state.message} />
             <Route
               exact
               path="/"

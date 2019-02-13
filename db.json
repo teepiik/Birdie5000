@@ -48,6 +48,20 @@
       "date": "Sat Feb 09 2019 21:06:14 GMT+0200 (Eastern European Standard Time)",
       "notes": "Bad boy",
       "id": 9
+    },
+    {
+      "birdname": "Hummingbird",
+      "birdrarity": "Extremely Rare",
+      "date": "Wed Feb 13 2019 20:44:38 GMT+0200 (Eastern European Standard Time)",
+      "notes": "Notee",
+      "id": 10
+    },
+    {
+      "birdname": "Nice bird",
+      "birdrarity": "Common",
+      "date": "Wed Feb 13 2019 20:47:57 GMT+0200 (Eastern European Standard Time)",
+      "notes": "Coms",
+      "id": 11
     }
   ]
 }

@@ -1,5 +1,7 @@
 import React from "react";
 
+// TODO add confirm window
+
 class ObsForm extends React.Component {
   constructor() {
     super();
