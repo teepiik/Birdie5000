@@ -76,14 +76,60 @@ class App extends Component {
 
   // sort alphabetically
   orderByName = event => {
-    let byAlphabeticalOrder = this.state.observations
-      .sort((a, b) => {
-        if (a.birdname.toUpperCase() < b.birdname.toUpperCase()) return -1;
-        else if (a.birdname.toUpperCase() > b.birdname.toUpperCase()) return 1;
-        return 0;
-      })
+    // reverse order, if already ordered by name
+    if (this.state.orderByName === true) {
+      let reverse = this.state.observations.reverse();
+      this.setState({
+        observations: reverse
+      });
+      return;
+    }
+
+    let byAlphabeticalOrder = this.state.observations.sort((a, b) => {
+      if (a.birdname.toUpperCase() < b.birdname.toUpperCase()) return -1;
+      else if (a.birdname.toUpperCase() > b.birdname.toUpperCase()) return 1;
+      return 0;
+    });
     this.setState({
-      observations: byAlphabeticalOrder
+      observations: byAlphabeticalOrder,
+      orderedByRarity: false,
+      orderByName: true,
+      orderByDate: false
+    });
+  };
+
+  // sort by rarity
+  orderByRarity = event => {
+    // reverse order, if already ordered by rarity
+    if (this.state.orderByRarity === true) {
+      let reverse = this.state.observations.reverse();
+      this.setState({
+        observations: reverse
+      });
+      return;
+    }
+
+    let commons = [],
+      rares = [],
+      extraRares = [],
+      orderedByRarity = [];
+
+    this.state.observations.forEach(o => {
+      if (o.birdrarity === "Common") {
+        commons.push(o);
+      } else if (o.birdrarity === "Rare") {
+        rares.push(o);
+      } else {
+        extraRares.push(o);
+      }
+    });
+    orderedByRarity = orderedByRarity.concat(commons, rares, extraRares);
+
+    this.setState({
+      observations: orderedByRarity,
+      orderByRarity: true,
+      orderByName: false,
+      orderByDate: false
     });
   };
 
@@ -92,7 +138,12 @@ class App extends Component {
       <div>
         <Router>
           <div className="container">
-            <Menubar orderByDate={this.orderByDate} orderByName={this.orderByName} />
+            <Menubar
+              orderByDate={this.orderByDate}
+              orderByName={this.orderByName}
+              orderByRarity={this.orderByRarity}
+              state={this.state}
+            />
             <Route
               exact
               path="/"

@@ -17,7 +17,7 @@ const Menubar = props => {
         Order by:
         <button onClick={props.orderByDate}>Date</button>
         <button onClick={props.orderByName}>Name</button>
-        <button onClick={props.orderByDate}>Date</button>
+        <button onClick={props.orderByRarity}>Rarity</button>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import Observation from "./observation";
 
 const ObsListing = props => {
-  console.log(props)
   const obsToShow = props.observations;
 
   return (
