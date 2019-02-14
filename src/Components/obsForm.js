@@ -1,13 +1,11 @@
 import React from "react";
 
-// TODO add confirm window
-
 class ObsForm extends React.Component {
   constructor() {
     super();
     this.state = {
       birdname: "",
-      birdrarity: "Common", // because prechecked
+      birdrarity: "Common", // because prechecked by radiobutton
       notes: ""
     };
   }
@@ -21,16 +19,23 @@ class ObsForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const date = Date();
-    this.props.addobservation({
-      birdname: this.state.birdname,
-      birdrarity: this.state.birdrarity,
-      date: date,
-      notes: this.state.notes
-    });
-    this.props.history.push("/");
+    const result = window.confirm("Add observation");
+    if (result) {
+      this.props.addobservation({
+        birdname: this.state.birdname,
+        birdrarity: this.state.birdrarity,
+        date: date,
+        notes: this.state.notes
+      });
+      this.props.history.push("/");
+    } else {
+      // dont reset rarity, becouse radiobutton is checked where it is
+      this.setState({
+        birdname: "",
+        notes: ""
+      });
+    }
   };
-  // change forms rarity to radiobutton
-  // add confirmation window
 
   render() {
     return (
