@@ -2,7 +2,7 @@
   "observations": [
     {
       "birdname": "bird",
-      "birdrarity": "common",
+      "birdrarity": "Common",
       "date": "Sat Feb 09 2019 15:02:13 GMT+0200 (Eastern European Standard Time)",
       "notes": "test",
       "id": 3
@@ -15,10 +15,10 @@
       "id": 4
     },
     {
-      "birdname": "coms",
-      "birdrarity": "",
+      "birdname": "Bugging Bird",
+      "birdrarity": "Rare",
       "date": "Sat Feb 09 2019 18:11:46 GMT+0200 (Eastern European Standard Time)",
-      "notes": "sss",
+      "notes": "Ipsum lorum",
       "id": 5
     },
     {
