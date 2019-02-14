@@ -72,7 +72,7 @@ class App extends Component {
 
     let byDateOrder = this.state.observations
       .sort((a, b) => {
-        return new Date(a.date).getTime - new Date(b.date).getTime;
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
       })
       .reverse();
     this.setState({
