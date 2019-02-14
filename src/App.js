@@ -15,7 +15,7 @@ class App extends Component {
       observations: [],
       message: "",
       orderByDate: true,
-      orderByAlph: false,
+      orderByName: false,
       orderByRarity: false
     };
   }
@@ -61,6 +61,15 @@ class App extends Component {
 
   // newest comes first
   orderByDate = event => {
+
+    if (this.state.orderByDate === true) {
+      let reverse = this.state.observations.reverse();
+      this.setState({
+        observations: reverse
+      });
+      return;
+    }
+
     let byDateOrder = this.state.observations
       .sort((a, b) => {
         return new Date(a.date).getTime - new Date(b.date).getTime;
@@ -69,7 +78,7 @@ class App extends Component {
     this.setState({
       observations: byDateOrder,
       orderByDate: true,
-      orderByAlph: false,
+      orderByName: false,
       orderByRarity: false
     });
   };
@@ -92,7 +101,7 @@ class App extends Component {
     });
     this.setState({
       observations: byAlphabeticalOrder,
-      orderedByRarity: false,
+      orderByRarity: false,
       orderByName: true,
       orderByDate: false
     });
