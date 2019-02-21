@@ -1,10 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, NavbarBrand } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Menubar = props => {
   return (
-    <div>
+    <div className="menu">
+      <Navbar bg="dark" variant="dark" expand={true}>
+        <Navbar.Brand href="#home">Birdie5000</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+          <NavLink exact className= "nav-link" to={`/`}>Home</NavLink>
+            <NavLink className= "nav-link" to={`/createobservation`}>Create observation</NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+    /*<div>
       <Navbar inverse collapseOnSelect>
         <NavbarBrand>
           <Link to={`/`}>Frontpage</Link>
@@ -13,8 +25,10 @@ const Menubar = props => {
           <Link to={`/createobservation`}>Create observation</Link>
         </NavbarBrand>
       </Navbar>
-    </div>
+    </div>*/
   );
 };
+
+// nav-link class
 
 export default Menubar;

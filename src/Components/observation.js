@@ -3,14 +3,11 @@ import moment from "moment"
 
 const Observation = ({ observation }) => {
   return (
-    <div>
-      <li className="Observation">
-        <h2 className="Observation">{observation.birdname} </h2>
-        <p className="Observation">Rarity: {observation.birdrarity} </p>
-        <p className="Observation">{moment(observation.date).format('MMMM Do YYYY, HH:mm')} </p>
-        <p className="Observation">Notes: {observation.notes} </p>
-        
-      </li>
+    <div className="Observation">
+        <h1 className="display-4">{observation.birdname} </h1>
+        <h5>Rarity: {observation.birdrarity} </h5>
+        <h5>{moment(observation.date).format('MMMM Do YYYY, HH:mm')} </h5>
+        <h6>Notes: {observation.notes} </h6>
     </div>
   );
 };

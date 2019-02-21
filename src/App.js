@@ -145,32 +145,34 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <div className="container">
+          <div>
             <Menubar />
             <Notification message={this.state.message} />
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <ObsListing
-                  observations={this.state.observations}
-                  orderByDate={this.orderByDate}
-                  orderByName={this.orderByName}
-                  orderByRarity={this.orderByRarity}
-                  state={this.state}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/createobservation"
-              render={({ history }) => (
-                <ObsForm
-                  history={history}
-                  addobservation={this.addObservation}
-                />
-              )}
-            />
+            <div className="container">
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <ObsListing
+                    observations={this.state.observations}
+                    orderByDate={this.orderByDate}
+                    orderByName={this.orderByName}
+                    orderByRarity={this.orderByRarity}
+                    state={this.state}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/createobservation"
+                render={({ history }) => (
+                  <ObsForm
+                    history={history}
+                    addobservation={this.addObservation}
+                  />
+                )}
+              />
+            </div>
           </div>
         </Router>
       </div>
