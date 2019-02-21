@@ -61,7 +61,6 @@ class App extends Component {
 
   // newest comes first
   orderByDate = event => {
-
     if (this.state.orderByDate === true) {
       let reverse = this.state.observations.reverse();
       this.setState({
@@ -147,18 +146,19 @@ class App extends Component {
       <div>
         <Router>
           <div className="container">
-            <Menubar
-              orderByDate={this.orderByDate}
-              orderByName={this.orderByName}
-              orderByRarity={this.orderByRarity}
-              state={this.state}
-            />
+            <Menubar />
             <Notification message={this.state.message} />
             <Route
               exact
               path="/"
               render={() => (
-                <ObsListing observations={this.state.observations} />
+                <ObsListing
+                  observations={this.state.observations}
+                  orderByDate={this.orderByDate}
+                  orderByName={this.orderByName}
+                  orderByRarity={this.orderByRarity}
+                  state={this.state}
+                />
               )}
             />
             <Route

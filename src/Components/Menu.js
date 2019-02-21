@@ -13,12 +13,6 @@ const Menubar = props => {
           <Link to={`/createobservation`}>Create observation</Link>
         </NavbarBrand>
       </Navbar>
-      <div>
-        Order by:
-        <button onClick={props.orderByDate}>Date</button>
-        <button onClick={props.orderByName}>Name</button>
-        <button onClick={props.orderByRarity}>Rarity</button>
-      </div>
     </div>
   );
 };
