@@ -4,8 +4,10 @@ React practice exercise
 Application for adding bird observation. Users can add own observations. Observation include name, rarity, notes and time of the observation (when recorded). User can also view observations on frontpage and order them by name, rarity or time of the observation.
 
 ## How to use
-0. You need Javascript, Node.js and JSON server.
+0. You need Javascript and Node.js.
 
-1. Start JSON server on port 3001 by typing on terminal "npx json-server --port=3001 --watch db.json"
+1. Install all dependencies with cmd 'npm install'
 
-2. Start application in separate terminal. First install depencies 'npm install'. Then start app with cmd 'npm start'
+2. Start JSON server on port 3001 with cmd 'npm run startJsonServer' (check package.json for script)
+
+3. Start application in separate terminal with cmd 'npm start'
