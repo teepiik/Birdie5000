@@ -10,13 +10,13 @@ const ObsListing = props => {
       <div className = "menu">
         <p className="Listing">Order observation by</p>
         <ButtonToolbar>
-          <Button variant="dark" size="sm" onClick={props.orderByDate}>
+          <Button className="sortButton" variant="dark" size="sm" onClick={props.orderByDate}>
             Date
           </Button>
-          <Button variant="dark" size="sm" onClick={props.orderByName}>
+          <Button className="sortButton" variant="dark" size="sm" onClick={props.orderByName}>
             Name
           </Button>
-          <Button variant="dark" size="sm" onClick={props.orderByRarity}>
+          <Button className="sortButton" variant="dark" size="sm" onClick={props.orderByRarity}>
             Rarity
           </Button>
         </ButtonToolbar>
