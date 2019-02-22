@@ -4,8 +4,8 @@ import "./App.css";
 import observationService from "./Services/observationService";
 import Menubar from "./Components/Menu";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import ObsListing from "./Components/obsListing";
-import ObsForm from "./Components/obsForm";
+import ObsListing from "./Components/ObsListing";
+import ObsForm from "./Components/ObsForm";
 import Notification from "./Components/Notification";
 
 class App extends Component {

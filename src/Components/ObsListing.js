@@ -1,5 +1,5 @@
 import React from "react";
-import Observation from "./observation";
+import Observation from "./Observation";
 import { ButtonToolbar, Button } from "react-bootstrap";
 
 const ObsListing = props => {
