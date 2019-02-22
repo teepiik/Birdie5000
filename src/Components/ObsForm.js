@@ -19,7 +19,7 @@ class ObsForm extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     const date = Date();
-    const location = await this.loadPosition()
+    const location = await this.loadPosition();
 
     const result = window.confirm("Add observation");
     if (result) {
@@ -76,7 +76,7 @@ class ObsForm extends React.Component {
             />
           </p>
           <p>
-            <label className="formLabel">Rarity</label> &nbsp; Common &nbsp;
+            <label className="formLabel">Rarity</label> <br />
             <input
               defaultChecked
               type="radio"
@@ -84,20 +84,21 @@ class ObsForm extends React.Component {
               value="Common"
               onChange={this.handleChange}
             />
-            &nbsp; Rare &nbsp;
+            &nbsp; Common &nbsp; <br />
             <input
               type="radio"
               name="birdrarity"
               value="Rare"
               onChange={this.handleChange}
             />
-            &nbsp; Extremely Rare &nbsp;
+            &nbsp; Rare &nbsp; <br />
             <input
               type="radio"
               name="birdrarity"
               value="Extremely Rare"
               onChange={this.handleChange}
             />
+            &nbsp; Extremely Rare <br />
           </p>
           <p>
             <label className="formLabel">Notes</label> &nbsp;
