@@ -7,7 +7,7 @@ const ObsListing = props => {
 
   return (
     <div>
-      <div className = "menu">
+      <div className = "sorting">
         <p className="Listing">Order observation by</p>
         <ButtonToolbar>
           <Button className="sortButton" variant="dark" size="sm" onClick={props.orderByDate}>
@@ -21,7 +21,7 @@ const ObsListing = props => {
           </Button>
         </ButtonToolbar>
       </div>
-      <div>
+      <div className="obsListing">
           {obsToShow.map(obs => (
             <Observation key={obs.id} observation={obs} />
           ))}
