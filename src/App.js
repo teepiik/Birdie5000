@@ -20,6 +20,12 @@ class App extends Component {
     };
   }
 
+  /* 
+  !!!!!!!!!!!! FIX BUG !!!!!!!!!!!
+  after adding by form, order by date might be temporarily wrong.
+  adds possibly newest as oldest and then just reverse until state true -> false ->true
+  */
+
   componentDidMount = async () => {
     const getObs = await observationService.getAll();
     this.setState({

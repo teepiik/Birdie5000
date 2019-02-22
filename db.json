@@ -5,6 +5,8 @@
       "birdrarity": "Rare",
       "date": "Sat Feb 09 2019 20:05:54 GMT+0200 (Eastern European Standard Time)",
       "notes": "Talking bird",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 8
     },
     {
@@ -12,6 +14,8 @@
       "birdrarity": "Common",
       "date": "Sat Feb 09 2019 21:06:14 GMT+0200 (Eastern European Standard Time)",
       "notes": "Sea bird",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 9
     },
     {
@@ -19,6 +23,8 @@
       "birdrarity": "Extremely Rare",
       "date": "Wed Feb 13 2019 20:44:38 GMT+0200 (Eastern European Standard Time)",
       "notes": "Legendary bird",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 10
     },
     {
@@ -26,6 +32,8 @@
       "birdrarity": "Rare",
       "date": "Wed Feb 13 2019 20:47:57 GMT+0200 (Eastern European Standard Time)",
       "notes": "Good fisher",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 11
     },
     {
@@ -33,6 +41,8 @@
       "birdrarity": "Common",
       "date": "Thu Feb 14 2019 11:08:10 GMT+0200 (Eastern European Standard Time)",
       "notes": "Wise bird",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 12
     },
     {
@@ -40,7 +50,18 @@
       "birdrarity": "Rare",
       "date": "Fri Feb 22 2019 20:55:33 GMT+0200 (Eastern European Standard Time)",
       "notes": "Screaming eagle",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
       "id": 13
+    },
+    {
+      "birdname": "Pelican",
+      "birdrarity": "Extremely Rare",
+      "date": "Sat Feb 23 2019 00:35:40 GMT+0200 (Eastern European Standard Time)",
+      "notes": "Marathoner",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
+      "id": 14
     }
   ]
 }

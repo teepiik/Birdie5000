@@ -16,16 +16,20 @@ class ObsForm extends React.Component {
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
     const date = Date();
+    const location = await this.loadPosition()
+
     const result = window.confirm("Add observation");
     if (result) {
       this.props.addobservation({
         birdname: this.state.birdname,
         birdrarity: this.state.birdrarity,
         date: date,
-        notes: this.state.notes
+        notes: this.state.notes,
+        latitude: location.lat,
+        longitude: location.long
       });
       this.props.history.push("/");
     } else {
@@ -34,6 +38,25 @@ class ObsForm extends React.Component {
         birdname: "",
         notes: ""
       });
+    }
+  };
+
+  getCurrentPosition = (options = {}) => {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, options);
+    });
+  };
+
+  loadPosition = async () => {
+    try {
+      const position = await this.getCurrentPosition();
+      const { latitude, longitude } = position.coords;
+      return {
+        lat: latitude,
+        long: longitude
+      };
+    } catch (error) {
+      console.log(error);
     }
   };
 
