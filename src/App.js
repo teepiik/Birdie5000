@@ -20,12 +20,6 @@ class App extends Component {
     };
   }
 
-  /* 
-  !!!!!!!!!!!! FIX BUG !!!!!!!!!!!
-  after adding by form, order by date might be temporarily wrong.
-  adds possibly newest as oldest and then just reverse until state true -> false ->true
-  */
-
   componentDidMount = async () => {
     const getObs = await observationService.getAll();
     this.setState({
@@ -38,7 +32,11 @@ class App extends Component {
     const addedObs = await observationService.create(observation);
     this.setState({
       observations: this.state.observations.concat(addedObs),
-      message: `you added observation of : ${addedObs.birdname}`
+      message: `you added observation of : ${addedObs.birdname}`,
+      orderByDate: false,
+      orderByName: false,
+      orderByRarity: false
+      // adding new breaks ordering
     });
     setTimeout(() => {
       this.setState({ message: "" });
