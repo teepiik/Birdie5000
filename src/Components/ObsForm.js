@@ -44,7 +44,7 @@ class ObsForm extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <p>
-            <label>Bird name</label>
+            <label className="formLabel">Bird name &nbsp;</label>
             <input
               type="text"
               name="birdname"
@@ -53,32 +53,31 @@ class ObsForm extends React.Component {
             />
           </p>
           <p>
-            <label>Rarity</label>
+            <label className="formLabel">Rarity</label> &nbsp; Common &nbsp;
             <input
               defaultChecked
               type="radio"
               name="birdrarity"
               value="Common"
               onChange={this.handleChange}
-            />{" "}
-            Common
+            />
+            &nbsp; Rare &nbsp;
             <input
               type="radio"
               name="birdrarity"
               value="Rare"
               onChange={this.handleChange}
-            />{" "}
-            Rare
+            />
+            &nbsp; Extremely Rare &nbsp;
             <input
               type="radio"
               name="birdrarity"
               value="Extremely Rare"
               onChange={this.handleChange}
-            />{" "}
-            Extremely Rare
+            />
           </p>
           <p>
-            <label>Notes</label>
+            <label className="formLabel">Notes</label> &nbsp;
             <input
               type="text"
               name="notes"
