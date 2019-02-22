@@ -16,19 +16,8 @@ const Menubar = props => {
         </Navbar.Collapse>
       </Navbar>
     </div>
-    /*<div>
-      <Navbar inverse collapseOnSelect>
-        <NavbarBrand>
-          <Link to={`/`}>Frontpage</Link>
-        </NavbarBrand>
-        <NavbarBrand>
-          <Link to={`/createobservation`}>Create observation</Link>
-        </NavbarBrand>
-      </Navbar>
-    </div>*/
   );
 };
 
-// nav-link class
 
 export default Menubar;
