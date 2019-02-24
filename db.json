@@ -62,6 +62,15 @@
       "latitude": 60.170282,
       "longitude": 24.943749,
       "id": 14
+    },
+    {
+      "birdname": "Sparrow",
+      "birdrarity": "Common",
+      "date": "Sun Feb 24 2019 22:43:12 GMT+0200 (Eastern European Standard Time)",
+      "notes": "Little bird",
+      "latitude": 60.170282,
+      "longitude": 24.943749,
+      "id": 15
     }
   ]
 }

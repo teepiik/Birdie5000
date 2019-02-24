@@ -32,7 +32,7 @@ class App extends Component {
     const addedObs = await observationService.create(observation);
     this.setState({
       observations: this.state.observations.concat(addedObs),
-      message: `you added observation of : ${addedObs.birdname}`,
+      message: `you added ${addedObs.birdname}`,
       orderByDate: false,
       orderByName: false,
       orderByRarity: false
