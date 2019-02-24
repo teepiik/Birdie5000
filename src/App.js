@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import logo from './logo.svg'; add img from src
 import "./App.css";
 import observationService from "./Services/ObservationService";
 import Menubar from "./Components/Menu";
@@ -36,13 +35,14 @@ class App extends Component {
       orderByDate: false,
       orderByName: false,
       orderByRarity: false
-      // adding new breaks ordering
+      // adding new breaks current ordering
     });
     setTimeout(() => {
       this.setState({ message: "" });
     }, 5000);
   };
 
+  // DELETE not yet implemented
   deleteObservation = async observation => {
     const result = window.confirm("Confirm delete");
     if (result) {
@@ -63,7 +63,7 @@ class App extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  // newest comes first
+  // sort by date
   orderByDate = event => {
     if (this.state.orderByDate === true) {
       let reverse = this.state.observations.reverse();
