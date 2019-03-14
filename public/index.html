@@ -52,7 +52,9 @@
     .catch(function(error) {
       console.log('Service worker registration failed, error:', error);
     });
-  }        
+  }  else {
+    console.log('Serviceworker navigator error')
+  }      
 }
     </script>
 
