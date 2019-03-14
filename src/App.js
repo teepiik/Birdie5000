@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      observations: [],
+      observations: null,
       message: "",
       orderByDate: true,
       orderByName: false,
@@ -20,13 +20,35 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const getObs = await observationService.getAll();
-    this.setState({
-      observations: getObs
-    });
-    this.orderByDate();
+    ///// Alert. Check this logic for adding new observations also into cache
+    if (!navigator.onLine) {
+      let obsFromCache = JSON.parse(
+        window.localStorage.getItem("observationCache")
+      );
+      this.setState({
+        observations: obsFromCache
+      });
+    } else {
+      const getObs = await observationService.getAll();
+      this.setState({
+        observations: getObs
+      });
+      // Set observations to browser cache
+      if (getObs !== null && getObs.length > 0) {
+        window.localStorage.setItem(
+          "observationsCache",
+          JSON.stringify(getObs)
+        );
+      }
+    }
+
+    if (this.state.observations !== null) {
+      this.orderByDate();
+    }
   };
 
+// no offline support for POST yet
+// TODO Implement update for observations in cache
   addObservation = async observation => {
     const addedObs = await observationService.create(observation);
     this.setState({
@@ -42,7 +64,7 @@ class App extends Component {
     }, 5000);
   };
 
-  // DELETE not yet implemented
+  // DELETE not yet implemented AND no support for Offline functionality
   deleteObservation = async observation => {
     const result = window.confirm("Confirm delete");
     if (result) {
@@ -146,6 +168,9 @@ class App extends Component {
   };
 
   render() {
+    if (this.state.observations === null) {
+      return <div className="container">Loading resources</div>;
+    }
     return (
       <div>
         <Router>

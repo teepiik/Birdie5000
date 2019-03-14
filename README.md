@@ -3,6 +3,9 @@ React practice exercise
 ---
 Application for adding bird observations. Users can add own observations. Observation include name, rarity, notes, time of the observation (when recorded) and location of the observation (when recorded). User can also view observations on frontpage and order them by name, rarity or time of the observation.
 
+## Offline functionality
+This app uses React.js ServiceWorker in order to achieve PWA style offline abilities using localStorage as a cache for observations. This allows user to read observations in offline.
+
 ## How to use
 0. You need Javascript and Node.js.
 
