@@ -71,6 +71,15 @@
       "latitude": 60.170282,
       "longitude": 24.943749,
       "id": 15
+    },
+    {
+      "birdname": "King Penguin",
+      "birdrarity": "Extremely Rare",
+      "date": "Sat Mar 16 2019 13:49:12 GMT+0200 (Eastern European Standard Time)",
+      "notes": "Not ice cream",
+      "latitude": 60.000,
+      "longitude": 25.000,
+      "id": 16
     }
   ]
 }

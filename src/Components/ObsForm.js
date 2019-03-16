@@ -18,26 +18,33 @@ class ObsForm extends React.Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const date = Date();
-    const location = await this.loadPosition();
-
-    const result = window.confirm("Add observation");
-    if (result) {
-      this.props.addobservation({
-        birdname: this.state.birdname,
-        birdrarity: this.state.birdrarity,
-        date: date,
-        notes: this.state.notes,
-        latitude: location.lat,
-        longitude: location.long
-      });
-      this.props.history.push("/");
+    // temporary solution to warn users
+    if (!navigator.onLine) {
+      window.alert(
+        "You seem to be in Offline, not able to add new obs when offline atm"
+      );
     } else {
-      // dont reset rarity, becouse radiobutton is checked where it is
-      this.setState({
-        birdname: "",
-        notes: ""
-      });
+      const date = Date();
+      const location = await this.loadPosition();
+
+      const result = window.confirm("Add observation");
+      if (result) {
+        this.props.addobservation({
+          birdname: this.state.birdname,
+          birdrarity: this.state.birdrarity,
+          date: date,
+          notes: this.state.notes,
+          latitude: location.lat,
+          longitude: location.long
+        });
+        this.props.history.push("/");
+      } else {
+        // dont reset rarity, becouse radiobutton is checked where it is
+        this.setState({
+          birdname: "",
+          notes: ""
+        });
+      }
     }
   };
 
@@ -117,5 +124,3 @@ class ObsForm extends React.Component {
 }
 
 export default ObsForm;
-
-
