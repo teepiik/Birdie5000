@@ -77,9 +77,18 @@
       "birdrarity": "Extremely Rare",
       "date": "Sat Mar 16 2019 13:49:12 GMT+0200 (Eastern European Standard Time)",
       "notes": "Not ice cream",
-      "latitude": 60.000,
-      "longitude": 25.000,
+      "latitude": 60,
+      "longitude": 25,
       "id": 16
+    },
+    {
+      "birdname": "Validated Bird",
+      "birdrarity": "Rare",
+      "date": "Sat Mar 16 2019 17:07:01 GMT+0200 (Eastern European Standard Time)",
+      "notes": "validation testing",
+      "latitude": 60.3242,
+      "longitude": 25.019,
+      "id": 17
     }
   ]
 }

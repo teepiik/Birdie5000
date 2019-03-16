@@ -1,4 +1,6 @@
 import React from "react";
+import validateObservation from "../Services/validationService";
+import {Alert} from 'react-bootstrap'
 
 class ObsForm extends React.Component {
   constructor() {
@@ -6,7 +8,8 @@ class ObsForm extends React.Component {
     this.state = {
       birdname: "",
       birdrarity: "Common", // because prechecked by radiobutton
-      notes: ""
+      notes: "",
+      errors: null
     };
   }
 
@@ -26,6 +29,20 @@ class ObsForm extends React.Component {
     } else {
       const date = Date();
       const location = await this.loadPosition();
+
+      const mockBird = {
+        birdname: this.state.birdname,
+        notes: this.state.notes
+      };
+
+      let errors = validateObservation(mockBird);
+      if (errors.length > 0) {
+        this.setState({ errors });
+        setTimeout(() => {
+          this.setState({ errors: null });
+        }, 10000);
+        return;
+      }
 
       const result = window.confirm("Add observation");
       if (result) {
@@ -71,6 +88,13 @@ class ObsForm extends React.Component {
     return (
       <div>
         <h2> Add new observation </h2>
+
+        {this.state.errors ?
+        <div>
+          {this.state.errors.map(error => <Alert variant='primary'>{error}</Alert>)}
+        </div>
+        :
+        <div></div>}
 
         <form onSubmit={this.handleSubmit}>
           <p>

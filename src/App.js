@@ -25,6 +25,7 @@ class App extends Component {
       let obsFromCache = JSON.parse(
         window.localStorage.getItem("observationCache")
       );
+      console.log('offline, obs from cache')
       this.setState({
         observations: obsFromCache
       });
